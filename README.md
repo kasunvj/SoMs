@@ -38,7 +38,12 @@ you can upload the kernel seperately
 sudo ./upgrade_tool di -b boot.img
 sudo ip -details link show can0
 
-### Connect 
+### Connect to internt using `nmcli`/`nmtui`
+
+Useful commands 
+`nmcli device wifi list`
+`nmcli device wifi connect "SSID_NAME" password "YOUR_PASSWORD"`
+`nmcli connection modify "SSID_NAME" connection.autoconnect yes`
 
 ### Adding dabian pacakages to source
 `sudo nano /etc/apt/sources.list`
