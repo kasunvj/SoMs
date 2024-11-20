@@ -38,6 +38,18 @@ you can upload the kernel seperately
 sudo ./upgrade_tool di -b boot.img
 sudo ip -details link show can0
 
+###Connect 
+
+###Adding dabian pacakages to source
+`sudo nano /etc/apt/sources.list`
+```
+# Debian 10 Buster repositories
+deb [arch=arm64] http://deb.debian.org/debian/ buster main contrib non-free
+deb [arch=arm64] http://deb.debian.org/debian/ buster-updates main contrib non-free
+deb [arch=arm64] http://deb.debian.org/debian-security buster/updates main contrib non-free
+```
+
+
 ###Setting windowing server 
 There are two types of servers. `X11(Xorg)` or `walyland`
 Find your server using `echo $XDG_SESSION_TYPE`. You have to fun this in grahical interface to find out. if you use login console, what you will get of `tty`. `X11`uses `.xinitrc` in home (~) when called by `startx` or `xinit`. Sample file is located at /RK3568/windowing server. startx can be run at boot using `~/.bash_profile`
