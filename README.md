@@ -22,7 +22,8 @@ Device Tree
 https://www.linkedin.com/pulse/device-trees-embedded-linux-keroles-khalil/
 
 ## Setting Up dev board with custom config 
-###uploading images
+
+###Uploading base image and kernel
 linux PC
 Connect serial cable to host PC
 Connect microusb cable to host PC
@@ -37,9 +38,17 @@ you can upload the kernel seperately
 sudo ./upgrade_tool di -b boot.img
 sudo ip -details link show can0
 
-###
+###Setting windowing server 
+There are two types of servers. `X11(Xorg)` or `walyland`
+Find your server using `echo $XDG_SESSION_TYPE`. You have to fun this in grahical interface to find out. if you use login console, what you will get of `tty`. `X11`uses `.xinitrc` in home (~) when called by `startx` or `xinit`. Sample file is located at /RK3568/windowing server. startx can be run at boot using `~/.bash_profile`
+You have to disable your desktop environment using `systemctl disable lightdm`. 
+
+###Installing lightweight browser
+I used Midori browser. Configuration for that browser is located at 
 
 
+
+###configure CAN
 ------- CAN0 (as reading from userspace) is connected to can1 in evb ; this is a working no issue log---------------------------------- 
 root@linaro-alip:~# sudo ip link set can0 down
 root@linaro-alip:~# sudo ip link set can0 type can bitrate 500000[  353.196969] [dhd][wlan0] wl_run_escan : LEGACY_SCAN sync ID: 8, bssidx: 0
