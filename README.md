@@ -23,7 +23,7 @@ https://www.linkedin.com/pulse/device-trees-embedded-linux-keroles-khalil/
 
 ## Setting Up dev board with custom config 
 
-###Uploading base image and kernel
+### Uploading base image and kernel
 linux PC
 Connect serial cable to host PC
 Connect microusb cable to host PC
@@ -38,9 +38,9 @@ you can upload the kernel seperately
 sudo ./upgrade_tool di -b boot.img
 sudo ip -details link show can0
 
-###Connect 
+### Connect 
 
-###Adding dabian pacakages to source
+### Adding dabian pacakages to source
 `sudo nano /etc/apt/sources.list`
 ```
 # Debian 10 Buster repositories
@@ -50,12 +50,12 @@ deb [arch=arm64] http://deb.debian.org/debian-security buster/updates main contr
 ```
 
 
-###Setting windowing server 
+### Setting windowing server 
 There are two types of servers. `X11(Xorg)` or `walyland`
 Find your server using `echo $XDG_SESSION_TYPE`. You have to fun this in grahical interface to find out. if you use login console, what you will get of `tty`. `X11`uses `.xinitrc` in home (~) when called by `startx` or `xinit`. Sample file is located at /RK3568/windowing server. startx can be run at boot using `~/.bash_profile`
 You have to disable your desktop environment using `systemctl disable lightdm`. 
 
-###Installing lightweight browser
+### Installing lightweight browser
 I used Midori browser. Configuration for that browser is located at 
 
 screen rotate
@@ -63,7 +63,7 @@ xrandr --output HDMI-1 --rotate left
 
 
 
-###configure CAN
+### Configure CAN
 
 canfd-1.0:
 
