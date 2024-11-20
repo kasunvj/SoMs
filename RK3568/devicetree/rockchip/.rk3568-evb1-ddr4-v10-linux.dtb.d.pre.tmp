@@ -1,0 +1,28 @@
+rk3568-evb1-ddr4-v10-linux.o: \
+ arch/arm64/boot/dts/rockchip/rk3568-evb1-ddr4-v10-linux.dts \
+ arch/arm64/boot/dts/rockchip/rk3568-evb1-ddr4-v10.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/gpio/gpio.h \
+ scripts/dtc/include-prefixes/dt-bindings/pinctrl/rockchip.h \
+ arch/arm64/boot/dts/rockchip/rk3568.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/clock/rk3568-cru.h \
+ scripts/dtc/include-prefixes/dt-bindings/interrupt-controller/arm-gic.h \
+ scripts/dtc/include-prefixes/dt-bindings/interrupt-controller/irq.h \
+ scripts/dtc/include-prefixes/dt-bindings/soc/rockchip,boot-mode.h \
+ scripts/dtc/include-prefixes/dt-bindings/phy/phy.h \
+ scripts/dtc/include-prefixes/dt-bindings/power/rk3568-power.h \
+ scripts/dtc/include-prefixes/dt-bindings/soc/rockchip-system-status.h \
+ scripts/dtc/include-prefixes/dt-bindings/suspend/rockchip-rk3568.h \
+ scripts/dtc/include-prefixes/dt-bindings/thermal/thermal.h \
+ arch/arm64/boot/dts/rockchip/rk3568-dram-default-timing.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/clock/rockchip-ddr.h \
+ scripts/dtc/include-prefixes/dt-bindings/memory/rk3568-dram.h \
+ scripts/dtc/include-prefixes/dt-bindings/memory/rockchip-dram.h \
+ arch/arm64/boot/dts/rockchip/rk3568-pinctrl.dtsi \
+ arch/arm64/boot/dts/rockchip/rockchip-pinconf.dtsi \
+ arch/arm64/boot/dts/rockchip/rk3568-evb.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/pwm/pwm.h \
+ scripts/dtc/include-prefixes/dt-bindings/input/rk-input.h \
+ scripts/dtc/include-prefixes/dt-bindings/display/drm_mipi_dsi.h \
+ scripts/dtc/include-prefixes/dt-bindings/sensor-dev.h \
+ arch/arm64/boot/dts/rockchip/rk3568-linux.dtsi \
+ scripts/dtc/include-prefixes/dt-bindings/display/rockchip_vop.h
