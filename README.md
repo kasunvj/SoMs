@@ -15,6 +15,8 @@
 
 # RK3568 
 
+This is sort of a log on the go, while settin up the SOM. I noted down to repetitive commands and procedures here.  
+
 Drive link
 https://ln5.sync.com/dl/633f463c0/w5f2hutx-nvggz3wv-3gv8pr53-9jcr7kq2
 
@@ -38,6 +40,11 @@ you can upload the kernel seperately
 sudo ./upgrade_tool di -b boot.img
 sudo ip -details link show can0
 
+### Systemd services 
+sudo systemctl enable my-service.service
+sudo systemctl start my-service.service
+
+
 ### Connect to internt using `nmcli`/`nmtui`
 
 Useful commands 
@@ -51,17 +58,33 @@ Useful commands
 # Debian 10 Buster repositories
 deb [arch=arm64] http://deb.debian.org/debian/ buster main contrib non-free
 deb [arch=arm64] http://deb.debian.org/debian/ buster-updates main contrib non-free
-deb [arch=arm64] http://deb.debian.org/debian-security buster/updates main contrib non-free
+deb [arch=arm64] http://deb.debian.org/debian-security buster/updates main contrib non-free.debian.org/debian-security buster/updates main contrib non-free
 ```
 
 
 ### Setting windowing server 
 There are two types of servers. `X11(Xorg)` or `walyland`
-Find your server using `echo $XDG_SESSION_TYPE`. You have to fun this in grahical interface to find out. if you use login console, what you will get of `tty`. `X11`uses `.xinitrc` in home (~) when called by `startx` or `xinit`. Sample file is located at /RK3568/windowing server. startx can be run at boot using `~/.bash_profile`
-You have to disable your desktop environment using `systemctl disable lightdm`. 
+Find your server using `echo $XDG_SESSION_TYPE`. You have to fun this in grahical interface to find out. if you use login console, what you will get of `tty`. `X11`uses `.xinitrc` in home (~) when called by `startx` or `xinit`. Sample file is located at /RK3568/windowing server. startx can be run at boot by adding the command to `~/.bash_profile`
+
+*XOrg Server* 
+Xor is the 
+
+```
+sudo apt-get install --no-install-recommends xserver-xorg x11-xserver-utils xinit openbox
+```
+
+Disabling light display manager
+You have to disable your desktop environment using `systemctl disable lightdm`. Once you do, after a boot your desktop env will not appear. But still the windowing server is directed to light dm. you can verify it by running `startx` which immediately opens up your lightdm destop env.
+
+
 
 ### Installing lightweight browser
-I used Midori browser. Configuration for that browser is located at 
+I used Midori browser.
+```
+ sudo apt-get install midori
+```
+Configuration for that browser is located at `~/.config/midori/config`
+
 
 screen rotate
 xrandr --output HDMI-1 --rotate left
