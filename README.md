@@ -33,17 +33,19 @@ Press turn off power , press vol+ button and turn on power
 use rkchip commands from host PC to rotate
 
 uploading damin image 
+```
 sudo ./upgrade_tool uf update-debian.img
-
+```
 uploding kernel 
 you can upload the kernel seperately 
+```
 sudo ./upgrade_tool di -b boot.img
-sudo ip -details link show can0
-
+```
 ### Systemd services 
+```
 sudo systemctl enable my-service.service
 sudo systemctl start my-service.service
-
+```
 
 ### Connect to internt using `nmcli`/`nmtui`
 
@@ -188,4 +190,7 @@ Usage: ip link set DEVICE type can
                   RESTART-MS    := { 0 | NUMBER in ms }
   
 ```
-
+### CAN COmmands
+```
+sudo ip -details link show can0
+```
