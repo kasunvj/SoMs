@@ -190,7 +190,7 @@ Usage: ip link set DEVICE type can
                   RESTART-MS    := { 0 | NUMBER in ms }
   
 ```
-### CAN COmmands
+### CAN Commands
 ```
 sudo ip -details link show can0
 ```
