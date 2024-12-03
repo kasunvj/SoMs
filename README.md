@@ -90,7 +90,7 @@ xrandr --output HDMI-1 --rotate left
 
 
 
-### Configure CAN
+### Configure CAN from device tree
 
 canfd-1.0:
 
@@ -145,6 +145,47 @@ can0: can@fe570000 {
 		rx-fifo-depth = <6>;
 		status = "disabled";
 	}; what is canfd-1.0 and can-1.0
-  
 
+
+### Configure CAN
+```
+Usage: ip link set DEVICE type can
+        [ bitrate BITRATE [ sample-point SAMPLE-POINT] ] |
+        [ tq TQ prop-seg PROP_SEG phase-seg1 PHASE-SEG1
+          phase-seg2 PHASE-SEG2 [ sjw SJW ] ]
+
+        [ dbitrate BITRATE [ dsample-point SAMPLE-POINT] ] |
+        [ dtq TQ dprop-seg PROP_SEG dphase-seg1 PHASE-SEG1
+          dphase-seg2 PHASE-SEG2 [ dsjw SJW ] ]
+        [ tdcv TDCV tdco TDCO tdcf TDCF ]
+
+        [ loopback { on | off } ]
+        [ listen-only { on | off } ]
+        [ triple-sampling { on | off } ]
+        [ one-shot { on | off } ]
+        [ berr-reporting { on | off } ]
+        [ fd { on | off } ]
+        [ fd-non-iso { on | off } ]
+        [ presume-ack { on | off } ]
+        [ cc-len8-dlc { on | off } ]
+        [ tdc-mode { auto | manual | off } ]
+
+        [ restart-ms TIME-MS ]
+        [ restart ]
+
+        [ termination { 0..65535 } ]
+
+        Where: BITRATE  := { NUMBER in bps }
+                  SAMPLE-POINT  := { 0.000..0.999 }
+                  TQ            := { NUMBER in ns }
+                  PROP-SEG      := { NUMBER in tq }
+                  PHASE-SEG1    := { NUMBER in tq }
+                  PHASE-SEG2    := { NUMBER in tq }
+                  SJW           := { NUMBER in tq }
+                  TDCV          := { NUMBER in tc }
+                  TDCO          := { NUMBER in tc }
+                  TDCF          := { NUMBER in tc }
+                  RESTART-MS    := { 0 | NUMBER in ms }
+  
+```
 
