@@ -190,7 +190,27 @@ Usage: ip link set DEVICE type can
                   RESTART-MS    := { 0 | NUMBER in ms }
   
 ```
-### CAN Commands
+### CAN Debug Commands
 ```
 sudo ip -details link show can0
+```
+```
+ip -d -s link show can0
+
+root@linaro-alip:/home/linaro# ip -d -s link show can0
+2: can0: <NOARP,UP,LOWER_UP,ECHO> mtu 16 qdisc pfifo_fast state UP mode DEFAULT group default qlen 10
+    link/can  promiscuity 0 minmtu 0 maxmtu 0
+    can state ERROR-ACTIVE (berr-counter tx 0 rx 0) restart-ms 0
+          bitrate 500000 sample-point 0.850
+          tq 100 prop-seg 8 phase-seg1 8 phase-seg2 3 sjw 1
+          rockchip_can: tseg1 1..16 tseg2 1..8 sjw 1..4 brp 1..128 brp-inc 2
+          clock 100000000
+          re-started bus-errors arbit-lost error-warn error-pass bus-off
+          0          0          0          0          0          0         numtxqueues 1 numrxqueues 1 gso_max_size 65536 gso_max_segs 65535
+    RX: bytes  packets  errors  dropped overrun mcast
+    456        57       0       0       0       0
+    TX: bytes  packets  errors  dropped carrier collsns
+    0          0        0       0       0       0
+
+
 ```
