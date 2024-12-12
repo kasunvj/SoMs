@@ -192,6 +192,17 @@ Usage: ip link set DEVICE type can
 ```
 ### CAN Debug Commands
 ```
+sudo ip link set can0 up type can bitrate 125000
+sudo ip link set can0 down
+```
+```
+candump can0
+```
+
+```
+cansend can0 456#43414e2054657374
+```
+```
 sudo ip -details link show can0
 ```
 ```
@@ -214,3 +225,10 @@ root@linaro-alip:/home/linaro# ip -d -s link show can0
 
 
 ```
+
+## Creating Device Tree File
+
+There are 2 steps 
+1. Add a pin group node to the iomuxc node that defines the pin function and settings
+2. Reference that pin group node in the node of the new device that you are adding
+
