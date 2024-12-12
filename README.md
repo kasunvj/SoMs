@@ -192,8 +192,8 @@ Usage: ip link set DEVICE type can
 ```
 ### CAN Debug Commands
 ```
-sudo ip link set can0 up type can bitrate 125000
 sudo ip link set can0 down
+sudo ip link set can0 up type can bitrate 125000
 ```
 ```
 candump can0
